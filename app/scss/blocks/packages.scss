@@ -1,0 +1,116 @@
+.packages {
+	// .packages__heading
+
+	&__heading {
+		margin-bottom: clamp(rem(40), calc(40px + (60 - 40) * ((100vw - 320px) / (1190 - 320))), rem(60));
+	}
+	// .packages__container
+
+	&__container {
+		padding-top: clamp(rem(60), calc(60px + (120 - 60) * ((100vw - 320px) / (1190 - 320))), rem(120));
+		padding-bottom: clamp(rem(60), calc(60px + (120 - 60) * ((100vw - 320px) / (1190 - 320))), rem(120));
+	}
+
+	// .packages__items
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 40px;
+		@media (max-width: $tablet) {
+			gap: 35px;
+		}
+		@media (max-width: $mobile) {
+			gap: 30px;
+		}
+		// align-items: center;
+	}
+
+	// .packages__item
+
+	&__item {
+		text-align: center;
+		border-radius: 20px;
+		color: var(--blue-dark-color);
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+		padding-left: clamp(rem(20), calc(20px + (40 - 20) * ((100vw - 320px) / (1190 - 320))), rem(40));
+		padding-right: clamp(rem(20), calc(20px + (40 - 20) * ((100vw - 320px) / (1190 - 320))), rem(40));
+
+		border: 1px solid var(--grey-color);
+	}
+}
+.package-item {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	@media (min-width: 1010px) {
+		margin-top: rem(20);
+		margin-bottom: rem(20);
+	}
+	// .package-item__active
+
+	&__active {
+		margin: 0;
+		color: var(--white-color);
+		background: var(--blue-dark-color);
+		// .package-item__price {
+		// 	margin-top: rem(83);
+		// }
+	}
+
+	// .package-item__subtitle
+
+	&__subtitle {
+		font-size: rem(30);
+		text-transform: uppercase;
+		font-weight: 600;
+		// margin-bottom: rem(63);
+		margin-bottom: clamp(rem(40), calc(40px + (63 - 40) * ((100vw - 320px) / (1190 - 320))), rem(63));
+		.package-item__active & {
+			@media (min-width: 1010px) {
+				margin-bottom: rem(83);
+			}
+		}
+	}
+
+	// .package-item__price
+
+	&__price {
+		font-size: rem(50);
+		font-weight: 600;
+		margin-bottom: rem(20);
+	}
+
+	// .package-item__title
+
+	&__title {
+		font-size: clamp(rem(16), calc(16px + (18 - 16) * ((100vw - 320px) / (1190 - 320))), rem(18));
+	}
+
+	// .package-item__button-wrapper
+
+	&__button-wrapper {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	// .package-item__leave-application
+
+	&__leave-application {
+		// &:not(:first-child) {
+		// 	margin-top: auto;
+		// 	.package-item__active & {
+		// 		margin-top: rem(52);
+		// 	}
+		// }
+		// margin-top: rem(52);
+		margin-top: clamp(rem(40), calc(40px + (52 - 40) * ((100vw - 320px) / (1190 - 320))), rem(52));
+		min-width: auto;
+	}
+}
+.main-button {
+}
+

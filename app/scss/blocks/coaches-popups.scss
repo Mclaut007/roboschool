@@ -1,0 +1,400 @@
+.coaches-popups {
+}
+.coach-card-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	overflow-x: hidden;
+	overflow-y: auto;
+	// overflow: auto;
+	background: rgba(20, 16, 36, 0.1);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease 0s;
+	&._open {
+		visibility: visible;
+		opacity: 1;
+	}
+	// .coach-card-popup__body
+
+	&__body {
+		padding: rem(15);
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $mobile) {
+			padding: rem(10);
+		}
+	}
+
+	// .coach-card-popup__content
+
+	&__content {
+		width: rem(940);
+		// max-height: rem(768);
+		border-radius: 20px;
+		background: #fff;
+		padding: rem(40);
+		position: relative;
+		@media (max-width: $mobile) {
+			padding: rem(33) rem(20) rem(28);
+			border-radius: 15px;
+		}
+		@media (max-width: $mobileSmall) {
+			padding: rem(33) rem(20) rem(28);
+			border-radius: 10px;
+		}
+	}
+
+	// .coach-card-popup__header
+
+	&__header {
+		display: flex;
+		gap: rem(40);
+		margin-bottom: rem(40);
+		@media (max-width: $mobile) {
+			gap: rem(30);
+			margin-bottom: rem(30);
+		}
+		@media (max-width: $mobileMiddle) {
+			gap: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			gap: rem(10);
+			margin-bottom: rem(20);
+		}
+	}
+
+	// .coach-card-popup__img-wrapper
+
+	&__img-wrapper {
+		flex: 0 0 rem(160);
+		height: rem(222);
+		position: relative;
+		border-radius: rem(20);
+		overflow: hidden;
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(100);
+			height: rem(139);
+			border-radius: rem(15);
+		}
+		@media (max-width: $mobileMiddle) {
+			flex: 0 0 rem(75);
+			height: rem(110);
+			border-radius: rem(10);
+		}
+		@media (max-width: 370px) {
+			flex: 0 0 rem(60);
+			height: rem(88);
+			border-radius: rem(5);
+		}
+	}
+
+	// .coach-card-popup__img
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// .coach-card-popup__common-info
+
+	&__common-info {
+	}
+
+	// .coach-card-popup__name
+
+	&__name {
+		color: var(--blue-dark-color);
+		font-size: 24px;
+		font-weight: 600;
+		margin-bottom: rem(10);
+		@media (max-width: $mobileMiddle) {
+			font-size: rem(20);
+			margin-bottom: rem(5);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(16);
+		}
+	}
+
+	// .coach-card-popup__profession
+
+	&__profession {
+		color: var(--grey-color);
+		margin-bottom: rem(10);
+		@media (max-width: $mobileMiddle) {
+			font-size: rem(16);
+			line-height: 1.4;
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(14);
+		}
+		@media (max-width: 370px) {
+			font-size: rem(12);
+		}
+	}
+
+	// .coach-card-popup__social-media
+
+	&__social-media {
+		display: flex;
+		gap: rem(10);
+		@media (max-width: $mobileSmall) {
+			gap: rem(5);
+		}
+	}
+
+	// .coach-card-popup__facebook-link
+
+	&__facebook-link {
+	}
+
+	// .coach-card-popup__facebook-icon
+
+	&__facebook-icon {
+	}
+
+	// .coach-card-popup__instagram-link
+
+	&__instagram-link {
+	}
+
+	// .coach-card-popup__instagram-icon
+
+	&__instagram-icon {
+	}
+
+	// .coach-card-popup__main
+
+	&__main,
+	&__tab {
+		color: var(--blue-dark-color);
+		font-size: rem(20);
+		@media (max-width: $mobileMiddle) {
+			font-size: rem(18);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(16);
+		}
+	}
+
+	// .coach-card-popup__tabs
+
+	&__tabs {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-items: start;
+		padding-bottom: rem(20);
+		border-bottom: 1px solid rgba(20, 16, 36, 0.11);
+		margin-bottom: rem(20);
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(3, auto);
+			justify-content: space-around;
+		}
+		@media (max-width: 350px) {
+			justify-content: space-between;
+		}
+	}
+
+	// .coach-card-popup__tab
+
+	&__tab {
+		// .coach-card-popup__tab_disabled
+		background-color: transparent;
+		&_active {
+			color: var(--red-color);
+		}
+		&_disabled {
+			color: rgba(20, 16, 36, 0.2);
+			pointer-events: none;
+		}
+		@media (any-hover: hover) and (pointer: fine) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		@media (max-width: 350px) {
+			font-size: rem(14);
+		}
+	}
+
+	// .coach-card-popup__swiper
+
+	&__swiper {
+		height: 0;
+		@media (max-width: $mobileMiddle) {
+			margin-right: -10px;
+		}
+
+		// margin-bottom: rem(20);
+		&::after {
+			content: "";
+			width: 100%;
+			height: 32px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(transparent, rgba(255, 255, 255, 1));
+			z-index: 1;
+			// pointer-events: none;
+		}
+	}
+
+	&__swiper_active {
+		height: rem(354);
+	}
+
+	// .coach-card-popup__swiper-wrapper
+
+	&__swiper-wrapper {
+	}
+
+	// .coach-card-popup__swiper-slide
+
+	&__swiper-slide {
+		padding-bottom: rem(20);
+		padding-right: rem(15);
+		height: auto;
+	}
+
+	// .coach-card-popup__info
+
+	&__info {
+		// height: 0;
+		// overflow: hidden;
+	}
+
+	&__info_active {
+		// height: auto;
+	}
+
+	// .coach-card-popup__paragraph
+
+	&__paragraph {
+		@media (max-width: 350px) {
+			font-size: rem(14);
+		}
+	}
+
+	// .coach-card-popup__heading
+
+	&__heading {
+		color: var(--blue-dark-color);
+		font-size: rem(24);
+		&:not(:first-child) {
+			margin-top: rem(40);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+		@media (max-width: $mobileMiddle) {
+			font-size: rem(22);
+			&:not(:first-child) {
+				margin-top: rem(30);
+			}
+			&:not(:last-child) {
+				margin-bottom: rem(15);
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(20);
+			&:not(:first-child) {
+				margin-top: rem(25);
+			}
+		}
+		@media (max-width: 350px) {
+			font-size: rem(16);
+			&:not(:first-child) {
+				margin-top: rem(20);
+			}
+			&:not(:last-child) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
+
+	// .coach-card-popup__close-button
+
+	&__close-button {
+		position: absolute;
+		top: rem(40);
+		right: rem(40);
+		@media (max-width: $mobile) {
+			top: rem(20);
+			right: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			top: rem(10);
+			right: rem(10);
+		}
+		background-color: transparent;
+	}
+
+	// .coach-card-popup__close-word
+
+	&__close-word {
+		color: var(--grey-color);
+		font-size: 18px;
+		line-height: 1.6;
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	// .coach-card-popup__close-img
+
+	&__close-img {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+		@media (min-width: $mobileSmall) {
+			width: rem(20);
+		}
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
+.swiper-scrollbar.swiper-scrollbar-vertical {
+	right: 0;
+	width: 5px;
+	border-radius: 40px;
+	background: rgba(20, 16, 36, 0.08);
+	@media (max-width: $mobile) {
+		width: 4px;
+	}
+	@media (max-width: $mobileMiddle) {
+		width: 3px;
+	}
+}
+
+.swiper-scrollbar-drag {
+	border-radius: 40px;
+	background: var(--blue-dark-color);
+}
+
+// ===== swipers ===== //
+
+.block {
+	// .block__container
+
+	&__container {
+		color: #000;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+}

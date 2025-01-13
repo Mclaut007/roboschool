@@ -1,0 +1,185 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	line-height: 1.6;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	scrollbar-gutter: stable;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+svg {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// font-size: inherit;
+	// font-weight: 400;
+}
+
+h2 {
+	color: var(--blue-dark-color);
+	font-size: clamp(rem(30), calc(30px + (50 - 30) * ((100vw - 320px) / (1190 - 320))), rem(50));
+	line-height: 1.6;
+	font-weight: 600;
+	@media (max-width: $tablet) {
+		line-height: 1.4;
+		text-align: center;
+	}
+}
+
+h3 {
+	color: var(--blue-dark-color);
+	font-size: clamp(rem(20), calc(20px + (24 - 20) * ((100vw - 320px) / (1190 - 320))), rem(24));
+	font-weight: 600;
+}
+
+// В font-size можно записать самый частый размер шрифта на сайте, в font-family - самый частое семейство шрифта.
+
+body {
+	font-family: "Jost", sans-serif;
+	font-size: rem(18);
+	color: var(--white-color);
+	// overflow-wrap: break-word;
+	// word-wrap: break-word;
+}
+
+body._lock {
+	overflow: hidden;
+}
+
+/*--------- visually-hidden ---------*/
+
+// Класс, который можно использовать для элементов, которые  нужно скрыть, но так, чтобы скринридеры их видели. Например, заголовок, который должен по логике быть, но по дизайн-макету его нет. Или контент для табов(?). Когда display: none; не подходит.
+// Если нужно сделать плавное появление и исчезновение чего-либо, придется использовать, к примеру, visibility и opacity (hidden и 0). Но при этом нужно, чтобы элемент был спозиционирован абсолютно, к примеру (?). Иначе он будет продолжать занимать место в разметке.
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+/*------------------*/
+
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+/*------------------*/
+
+[class$="__container"] {
+	max-width: $maxWidth;
+	min-width: $minWidth;
+	padding: 0 rem(15);
+	margin: 0 auto;
+	@media (max-width: $mobileSmall) {
+		padding: 0 rem(10);
+	}
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.logo-link {
+	font-size: clamp(rem(18), calc(18px + (30 - 18) * ((100vw - 320px) / (1190 - 320))), rem(30));
+	font-weight: 700;
+}
+
+.phone-button {
+	font-size: clamp(rem(16), calc(16px + (30 - 16) * ((100vw - 320px) / (1190 - 320))), rem(30));
+	font-weight: 600;
+}
+
+.imp-info-icon {
+	cursor: pointer;
+}
+.imp-info-popup {
+	display: inline-block;
+	padding: rem(15) rem(20);
+	text-align: center;
+	font-size: rem(16);
+	font-weight: 400;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0px 2px 8px 0px rgba(20, 16, 36, 0.1);
+}

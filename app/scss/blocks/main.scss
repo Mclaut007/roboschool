@@ -1,0 +1,119 @@
+.banner {
+	background-color: var(--blue-dark-color);
+	// .banner__container
+
+	&__container {
+		max-width: 1526px;
+		padding-top: clamp(rem(111), calc(111px + (163 - 111) * ((100vw - 320px) / (1190 - 320))), rem(163)) ;
+		display: flex;
+		justify-content: flex-end;
+		gap: 28px;
+		position: relative;
+		@media (max-width: $tablet) {
+			display: block;
+			padding-bottom: rem(40);
+		}
+	}
+
+	// .banner__text
+
+	&__text {
+		padding-top: clamp(rem(80), calc(80px + (180 - 80) * ((100vw - 1000px) / (1190 - 1000))), rem(181));
+		@media (max-width: $tablet) {
+			padding-top: 0;
+			&:not(:last-child) {
+				margin-bottom: rem(20);
+			}
+			text-align: center;
+		}
+	}
+
+	// .banner__heading
+
+	&__heading {
+		font-size: rem(70);
+		font-weight: 600;
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+		// @media (max-width: $desk) {
+		// font-size: rem(60);
+		// }
+		@media (max-width: $tablet) {
+			font-size: clamp(rem(30), calc(30px + (70 - 30) * ((100vw - 320px) / (1190 - 320))), rem(70));
+			&:not(:last-child) {
+				margin-bottom: rem(10);
+			}
+		}
+	}
+
+	// .banner__paragraph
+
+	&__paragraph {
+		width: 516px;
+		font-size: clamp(rem(16), calc(16px + (20 - 16) * ((100vw - 320px) / (1190 - 320))), rem(20));
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
+	}
+
+	// .banner__button
+
+	&__button {
+		&:not(:first-child) {
+			margin-top: rem(50);
+		}
+		@media (max-width: $tablet) {
+			position: absolute;
+			bottom: rem(40);
+			left: 50%;
+			transform: translateX(-50%);
+			width: 300px;
+			max-width: 100%;
+		}
+	}
+
+	// .banner__img-wrapper
+
+	&__img-wrapper {
+		width: 783px;
+		@media (max-width: $tablet) {
+			margin: 0 auto;
+			// width: 400px;
+			width: clamp(273px, calc(273px + (400 - 273) * ((100vw - 320px) / (992 - 320))), 400px);
+			max-width: 100%;
+		}
+	}
+
+	// .banner__img
+
+	&__img {
+	}
+}
+
+.main-button {
+	font-size: rem(18);
+	color: #fff;
+	background-color: var(--red-color);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	// padding: rem(25) rem(35);
+	padding: clamp(17px, calc(17px + (25 - 17) * ((100vw - 320px) / (1190 - 320))), 25px) rem(35);
+	min-width: rem(260);
+	min-height: rem(60);
+	text-align: center;
+	transition: all 0.3s ease 0s;
+	border-radius: 5px;
+	// @media (max-width: $tablet) {
+	// 	padding: rem(17) rem(25);
+	// }
+	@media (max-width: $mobileSmall) {
+		font-size: rem(16);
+	}
+	@media (any-hover: hover) and (pointer: fine) {
+		&:hover {
+			background-color: #9a1317;
+		}
+	}
+}

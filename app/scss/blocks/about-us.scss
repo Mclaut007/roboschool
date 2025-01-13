@@ -1,0 +1,71 @@
+.about-us {
+	// .about-us__container
+
+	&__container {
+		padding-top: clamp(rem(60), calc(60px + (120 - 60) * ((100vw - 320px) / (1190 - 320))), rem(120));
+		padding-bottom: clamp(rem(60), calc(60px + (120 - 60) * ((100vw - 320px) / (1190 - 320))), rem(120));
+	}
+
+	// .about-us__roboschool-is
+
+	&__roboschool-is {
+		max-width: 891px;
+		color: #141024;
+		font-size: clamp(rem(20), calc(20px + (30 - 20) * ((100vw - 320px) / (1190 - 320))), rem(30));
+		span {
+			font-weight: 600;
+		}
+		&:not(:last-child) {
+			margin-bottom: clamp(rem(40), calc(40px + (60 - 40) * ((100vw - 320px) / (1190 - 320))), rem(60));
+		}
+	}
+
+	// .about-us__our-results
+
+	&__our-results {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+		@media (max-width: 1190px) {
+			// grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, minmax(auto, 280px));
+			// justify-items: center;
+			justify-content: space-evenly;
+		}
+		@media (max-width: $mobileMiddle) {
+			// grid-template-columns: 1fr;
+			grid-template-columns: 270px;
+		}
+		@media (max-width: $mobileSmall) {
+			row-gap: 30px;
+		}
+	}
+
+	// .about-us__result-card
+
+	&__result-card {
+		// max-width: 280px;
+		@media (max-width: 1190px) {
+			text-align: center;
+		}
+	}
+}
+
+.result-card {
+	// .result-card__number
+
+	&__number {
+		color: var(--red-color);
+		font-size: rem(70);
+		font-size: clamp(rem(60), calc(60px + (70 - 60) * ((100vw - 320px) / (1190 - 320))), rem(70));
+		font-weight: 600;
+	}
+
+	// .result-card__text
+
+	&__text {
+		color: var(--grey-color);
+		font-size: rem(18);
+		font-size: clamp(rem(16), calc(16px + (18 - 16) * ((100vw - 320px) / (1190 - 320))), rem(18));
+	}
+}
